@@ -58,6 +58,8 @@ public class Session extends StandardSession {
     @Override
     public void setId(String id) {
         this.id = id;
+        //修复HttpSessionListener失效的BUG
+        tellNew();
     }
 
     /** {@inheritDoc} */
